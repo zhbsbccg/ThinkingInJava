@@ -12,7 +12,7 @@ public class SleepBlocked implements Runnable {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("InterruptedException");
+			System.out.println("catch InterruptedException");
 		}
 		System.out.println("ÍË³öSleepBlocked");
 	}
