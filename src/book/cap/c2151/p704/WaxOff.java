@@ -2,9 +2,9 @@ package book.cap.c2151.p704;
 
 import java.util.concurrent.TimeUnit;
 
-public class WaxOn implements Runnable {
+public class WaxOff implements Runnable {
 	private Car car;
-	public WaxOn(Car car){
+	public WaxOff(Car car){
 		this.car=car;
 	}
 	@Override
@@ -12,17 +12,17 @@ public class WaxOn implements Runnable {
 		// TODO Auto-generated method stub
 		try {
 			while(!Thread.interrupted()){
-				System.out.println("Wax on!");
+				car.waitForWaxing();
+				System.out.println("Wax off!");
 				TimeUnit.MILLISECONDS.sleep(200);
-				car.waxed();
-				car.waitForBuffing();
+				car.buffed();
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			System.out.println("Exiting via interrupt");
 		}
-		System.out.println("Ending Wax On task");
+		System.out.println("Ending Wax Off task");
 		
 	}
 
